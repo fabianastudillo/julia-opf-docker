@@ -3,13 +3,8 @@ services:
   julia:
     build:
       context: julia-opf/
-#       root password
-#       - password=${ROOT_PASSWORD}
-#       - dbpassword=${DEBUG_PASSWORD}
       args:
-#        - password=9asdasefkzc@8
         - password=${ROOT_PASSWORD}
-#        - dbpassword=9asdasefkzc@8
         - dbpassword=${DEBUG_PASSWORD}
     container_name: julia-opf
     image: julia-opf
