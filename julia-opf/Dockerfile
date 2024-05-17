@@ -7,9 +7,9 @@ ARG dbpassword
 # Essential packages for remote debugging and login in
 ########################################################
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y \
+RUN apt-get update -y && apt-get upgrade -y && apt-get install -y \
     apt-utils gcc g++ openssh-server cmake build-essential gdb \
-    gdbserver rsync vim locales
+    gdbserver rsync nano locales
 RUN apt-get install -y bzip2 wget gnupg dirmngr apt-transport-https \
 	ca-certificates openssh-server tmux && \
     apt-get clean
