@@ -1,0 +1,1 @@
+alias julia="julia -J/root/opf-sysimage.so"
