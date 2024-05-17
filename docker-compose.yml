@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  julia:
+    build:
+      context: julia-opf/
+#       root password
+#       - password=${ROOT_PASSWORD}
+#       - dbpassword=${DEBUG_PASSWORD}
+      args:
+#        - password=9asdasefkzc@8
+        - password=${ROOT_PASSWORD}
+#        - dbpassword=9asdasefkzc@8
+        - dbpassword=${DEBUG_PASSWORD}
+    container_name: julia-opf
+    image: julia-opf
+    volumes:
+      - ./data:/root/data
+      - ./src:/root/src
+    working_dir: /root/src
+    cpuset: "1-3"
+    #command: julia --color=yes --check-bounds=yes --inline=yes --depwarn=yes --project=@. -e 'using Pkg; Pkg.test(coverage=true)'
